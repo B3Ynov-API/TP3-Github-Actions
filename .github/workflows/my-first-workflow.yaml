@@ -1,5 +1,5 @@
 name: GitHub Actions Demo
-run-name: API WF🚀
+run-name: MF WF🚀
 on: [push]
 jobs:
   Explore-GitHub-Actions:
