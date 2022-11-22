@@ -1,0 +1,19 @@
+jobs:
+  run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+  on: [push]
+  build-and-test:
+  name: Run unit tests
+  runs-on: ubuntu-latest
+  defaults:
+  run:
+  working-directory: ./api
+  steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 19.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: "19.x"
+      - run: yarn install
+      - run: yarn build --if-present
+      - run: yarn test
+      - run: yarn test:e2e
