@@ -1,17 +1,13 @@
+name: WF DOCKER
+run-name: DCOKER WF🚀
+on: [push]
 jobs:
-  run-name: ${{ github.actor }} Workflow Docker
-  on: [push]
   build-and-test:
-  name: Run unit tests
-  runs-on: ubuntu-latest
-  defaults:
-  steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js 19
-        uses: actions/setup-node@v3
-        with:
-          node-version: "19.x"
-      - run: yarn install
-      - run: yarn build --if-present
-      - run: yarn test
-      - run: yarn test:e2e
+    name: Run unit tests
+    runs-on: ubuntu-latest
+    steps:
+    - name: Secret action
+      with: # Set the secret as an input
+        super_secret: ${{ secrets.SECRET }}
+      env: # Or as an environment variable
+        super_secret: ${{ secrets.SECRET }}
