@@ -32,3 +32,4 @@ jobs:
           context: ./api
           push: true
           tags: verrya:${{ github.sha }}
+          
