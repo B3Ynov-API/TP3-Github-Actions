@@ -1,5 +1,5 @@
 jobs:
-  run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+  run-name: ${{ github.actor }} Workflow api🚀
   on: [push]
   build-and-test:
   name: Run unit tests
@@ -9,7 +9,7 @@ jobs:
   working-directory: ./api
   steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 19.x
+      - name: Use Node.js 19
         uses: actions/setup-node@v3
         with:
           node-version: "19.x"
