@@ -34,4 +34,4 @@ jobs:
           image: api
           context: ./api
           push: true
-          tags: verrya:api:${{ github.sha }}
+          tags: verrya/test:${{ github.sha }}
