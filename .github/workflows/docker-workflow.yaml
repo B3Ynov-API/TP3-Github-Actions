@@ -2,12 +2,26 @@ name: WF DOCKER
 run-name: DCOKER WF🚀
 on: [push]
 jobs:
-  build-and-test:
-    name: Run unit tests
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: Secret action
-      with: # Set the secret as an input
-        super_secret: ${{ secrets.SECRET }}
-      env: # Or as an environment variable
-        super_secret: ${{ secrets.SECRET }}
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.arnaudclaire }}
+          password: ${{ secrets.SECRET }}
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.arnaudclaire }}/clockbox:latest
