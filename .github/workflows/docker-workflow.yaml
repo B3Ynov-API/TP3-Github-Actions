@@ -1,10 +1,11 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
 jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
+  run-name: ${{ github.actor }} Workflow Docker
+  on: [push]
+  build-and-test:
+  name: Run unit tests
+  runs-on: ubuntu-latest
+  defaults:
+  steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 19
         uses: actions/setup-node@v3
