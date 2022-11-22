@@ -1,0 +1,19 @@
+name: API actions
+run-name: ${{ github.actor }} api
+on: [push]
+jobs:
+  build-and-test:
+    name: Run unit tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./api
+    steps:
+      - name: Use Node.js 14
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14.x'
+      - run: yarn install
+      - run: yarn test
+      - run: yarn test:e2e
+      - run: yarn build 
