@@ -43,5 +43,5 @@ jobs:
         with:
           context: ./api
           push: true
-          tags: Depot/Image${{ github.sha }}
+          tags: arnaudclaire/image:${{ github.sha }}
           
