@@ -25,7 +25,7 @@ jobs:
       #- run: yarn test
       - run: yarn test:e2e
         env:
-          MONGODB_URI: mongodb://root:root@mongo:27017
+          MONGODB_URI: mongodb://root:root@localhost:27017
       - run: yarn build 
 
       - name: Set up Docker Buildx
