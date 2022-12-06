@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: '14.x'
           cache: 'yarn'
-      - run: yarn install --frozen-lockfile
+      - run: yarn --prefer-offline
       #- run: yarn test
       - run: yarn test:e2e
         env:
