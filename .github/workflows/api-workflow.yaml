@@ -11,7 +11,7 @@ jobs:
     env:
       MONGODB_URI: mongodb://root:root@mongo:27017
     services:
-      mongodb:
+      mongo:
         image: mongo
         ports:
         - 27017:27017
